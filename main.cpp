@@ -17,23 +17,6 @@ void print_matrix(int high,int len, float **tab){
     std::cout<<""<<std::endl;
   }
 }
-/*
-float max_kol(int high,int len, float **tab){
-  
-  float max=0.;
-  float sum=0.; 
-  int j=1;
-  for(int i=1; i<high+1; i++){
-    for(j=1; j<len+1; j++){
-      sum=fabs(tab[j][i])+sum;
-    }
-    if(sum>max){
-      max=sum;
-      sum=0;
-    }
-  }
-  return max;
-  }*/
 
 float max_el(int high, int len, float**tab){
   float max=0.;
@@ -57,22 +40,9 @@ float** multi_matrix(float **mat_one, float** mat_two, int row){
       }
     }
   }
-  //print_matrix(row,row,result);
   return result;
 }
-/*
-void save_to_file(int high,int len, float **tab){ //NIE DZIALA
-  FILE *fn=fopen("dane.dat","w");
-  
-  for(int i=0; i<high+1; i++){
-    for(int j=0; j<len+1; j++){
-       fprintf(fn,"test: %f ",tab[i][j]);
-    }
-    std::cout<<""<<std::endl;
-  }
-  fclose(fn);
-}
-*/
+
 float** reverse(float **matri, int size, int* indexA){ // DZIALA
   float** result=matrix(1,size,1,size);
   float* wektor=vector(1,size);
@@ -89,16 +59,7 @@ float** reverse(float **matri, int size, int* indexA){ // DZIALA
   } 
   return result;
 }
-/*
-float wyznacznik(float **matrix, int size){ //aby wyliczyc wyznacznik macierzy A podkladamy macierz rozkladu LU A!!!
 
-  float wyzn=1;
-  for(int i=1; i<size+1; i++){
-    wyzn*=matrix[i][i];
-  }
-  return wyzn;
-}
-*/
 int main(){
   FILE *fp=fopen("dane.dat","w");
   float **A;
